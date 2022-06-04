@@ -1,0 +1,32 @@
+{
+    "name": "Ll/llcms",
+    "alias": "文章管理",
+    "description": "文章管理",
+    "type": "library",
+    "keywords": ["dcat-admin", "extension"],
+    "homepage": "https://github.com/duolabmeng6/Menull",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "多啦b梦",
+            "email": "1715109585@qq.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.1.0",
+        "dcat/laravel-admin": "~2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ll\\llcms\\": "src/"
+        }
+    },
+    "extra": {
+        "dcat-admin": "Ll\\llcms\\LlcmsServiceProvider",
+        "laravel": {
+            "providers": [
+                "Ll\\llcms\\LlcmsServiceProvider"
+            ]
+        }
+    }
+}
