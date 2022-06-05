@@ -45,14 +45,11 @@ class ArticleController extends AdminController
             $grid->column('tags', '标签')->display(function ($comments) {
 //                $res = $this->tags()->get()->pluck('name')->toArray();
                 $comments = $this->tags()->get()->pluck('name','id')->toArray();
+                $res = [];
                 foreach ($comments as $id=>$name) {
-
                     $res[] = "<a href='?tags%5Bid%5D={$id}'><span class='label' style='background:#586cb1'>{$name}</span></a>";
                 }
-
                 return join(" ", $res);
-
-                return $res;
             });
 
             $grid->column('show')->switch();
