@@ -1,10 +1,10 @@
 {
     "name": "Ll/llcms",
-    "alias": "文章管理",
-    "description": "文章管理",
+    "alias": "龙龙cms",
+    "description": "提供一个快速开发的cms的插件可自由的修改",
     "type": "library",
     "keywords": ["dcat-admin", "extension"],
-    "homepage": "https://github.com/duolabmeng6/Menull",
+    "homepage": "https://github.com/duolabmeng6/llcms",
     "license": "MIT",
     "authors": [
         {

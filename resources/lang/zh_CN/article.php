@@ -7,6 +7,7 @@ return [
     'fields' => [
         'title' => '标题',
         'cover_url' => '封面图片',
+        'category_id' => '分类',
         'desc' => '摘要描述',
         'content' => '内容',
         'show' => '是否显示',

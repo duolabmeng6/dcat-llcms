@@ -8,10 +8,10 @@ use Dcat\Admin\Admin;
 class LlcmsServiceProvider extends ServiceProvider
 {
 	protected $js = [
-        'js/index.js',
+//        'js/index.js',
     ];
 	protected $css = [
-		'css/index.css',
+//		'css/index.css',
 	];
     protected $menu = [
         [
@@ -22,14 +22,21 @@ class LlcmsServiceProvider extends ServiceProvider
         [
             'parent' => '内容管理', // 指定父级菜单
             'title' => '文章管理',
-            'uri'   => 'articles',
+            'uri'   => 'cms-articles',
             'icon'  => 'feather icon-file-minus',
 
         ],
         [
             'parent' => '内容管理', // 指定父级菜单
             'title' => '标签管理',
-            'uri'   => 'tags',
+            'uri'   => 'cms-tags',
+            'icon'  => 'feather icon-flag',
+
+        ],
+        [
+            'parent' => '内容管理', // 指定父级菜单
+            'title' => '分类管理',
+            'uri'   => 'cms-category',
             'icon'  => 'feather icon-flag',
 
         ],

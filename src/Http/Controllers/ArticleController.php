@@ -4,6 +4,7 @@ namespace Ll\llcms\http\Controllers;
 
 use Ll\llcms\Repositories\Article;
 use Ll\llcms\Models\Tag;
+use Ll\llcms\Models\Category;
 use Dcat\Admin\Form;
 use Dcat\Admin\Grid;
 use Dcat\Admin\Show;
@@ -34,11 +35,14 @@ class ArticleController extends AdminController
                 $filter->like('title');
                 $filter->like('content');
                 $filter->equal('tags.id', "标签")->select(Tag::all()->pluck('name', 'id'));
+                $filter->equal('category_id', "分类")->select(Category::selectOptions());
             });
 
 
             $grid->column('id')->sortable();
             $grid->column('title')->editable();
+//            $grid->column('category_id')->select()->options(Category::selectOptions());
+            $grid->column('category_id','分类')->select(Category::selectOptions());
 
 //            $grid->column('tags', '文章标签')->label();
             //实时查询标签
@@ -106,6 +110,10 @@ class ArticleController extends AdminController
             $form->display('id');
             $form->text('title')->rules('required|min:1');
 
+            $form->width(6)
+                ->select('category_id', '分类')
+                ->options(Category::selectOptions())
+                ->required();
 
             $form->tags('tags', '文章标签')
                 ->help('随意打上标签，输入后按空格创建，再按回车确定。')
